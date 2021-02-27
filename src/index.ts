@@ -19,16 +19,32 @@ import {
 } from './setup';
 // Helpers
 import { createBricks } from './helpers';
+// Sound Manager
+import {Howl, Howler} from 'howler';
 
 let gameOver = false;
 let score = 0;
 
+// Sounds
+var colliding_sound = new Howl({
+    src: ['./sounds/colliding.wav']
+});
+var win_sound = new Howl({
+    src: ['./sounds/win.wav']
+});
+var game_over_sound = new Howl({
+    src: ['./sounds/game_over.wav'],
+    html5: true
+});
+
 function setGameOver(view: CanvasView) {
+    game_over_sound.play();
     view.drawInfo('Game Over!');
     gameOver = false;
 }
 
 function setGameWin(view: CanvasView) {
+    win_sound.play();
     view.drawInfo('Game Won!');
     gameOver = false;
 }
@@ -60,6 +76,7 @@ function gameLoop(
     const collidingBrick = collision.isCollidingBricks(ball, bricks);
 
     if (collidingBrick) {
+        colliding_sound.play();
         score += 1;
         view.drawScore(score);
     }
