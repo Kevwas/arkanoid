@@ -19,22 +19,20 @@ export const BRICK_WIDTH = canvas
 export const BRICK_HEIGHT = canvas
   ? Math.floor((canvas.height - STAGE_PADDING * 2) / STAGE_ROWS) - BRICK_PADDING
   : 30;
-export const PADDLE_WIDTH = canvas ? canvas.width * 0.15 : 150;
-export const PADDLE_HEIGHT = canvas ? canvas.height * 0.025 : 25;
-export const PADDLE_STARTX = canvas ? canvas.width * 0.45 : 450;
-export const PADDLE_SPEED = canvas ? canvas.width * 0.01 : 10;
-export const BALL_SPEED = canvas ? canvas.width * 0.005 : 5;
-export const BALL_SIZE = canvas 
-  ? 0.017 * Math.sqrt(Math.pow(canvas.width, 2) +  Math.pow(canvas.height, 2)) 
-  : 20;
-export const BALL_STARTX = canvas ? canvas.width / 2 : 500;
-export const BALL_STARTY = canvas ? canvas.height * 0.67 : 400;
+export const PADDLE_WIDTH = 150;
+export const PADDLE_HEIGHT = 25;
+export const PADDLE_STARTX = 450;
+export const PADDLE_SPEED = 10;
+export const BALL_SPEED = 5;
+export const BALL_SIZE = 20;
+export const BALL_STARTX = 500;
+export const BALL_STARTY = 400;
 
 export const BRICK_IMAGES: { [key: number]: string } = {
   1: RED_BRICK_IMAGE,
   2: GREEN_BRICK_IMAGE,
   3: YELLOW_BRICK_IMAGE,
-  4: BLUE_BRICK_IMAGE, 
+  4: BLUE_BRICK_IMAGE,
   5: PURPLE_BRICK_IMAGE
 };
 
